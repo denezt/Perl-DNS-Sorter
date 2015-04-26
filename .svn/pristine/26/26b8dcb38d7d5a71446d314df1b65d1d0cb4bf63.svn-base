@@ -1,0 +1,42 @@
+#!/bin/bash
+
+outputfile="internet_tld_list.list"
+
+subdomains=( "dev." "helpdesk."  "www." "finance." "sales." "mail.")
+domains=( "cheatbook" "math-a-holic" "gotta-do-it" "hangitonthewall" "keymaker" "cajun-gauge" "computertronic" "soundcappa" "univoso-lk" )
+tlds=( ".com" ".biz" ".web" ".edu" ".gov" ".org" ".co.uk" ".net" ".cc" )
+
+
+
+first=${#subdomains[*]}
+second=${#domains[*]}
+third=${#tlds[*]}
+
+echo "First List"
+read -p "Clear Output file $outputfile[y|Y]" _option
+
+case $_option in
+	y|Y)printf "" > $outputfile;;
+esac
+
+
+set1=1
+count=0
+
+for i in 1 2 3 4 5 6 7 8
+do
+	case $i in
+	$i)
+		for s1 in 0 1 2 3 4 5 6
+		do
+			if [ $set1 -eq 1 ];
+			then
+				count=$(( count + 1))
+				printf "[%i]: " $count
+				printf "${subdomains[$s1]}${domains[$i]}${tlds[$s1]}\n" >> $outputfile
+			fi
+		done
+	;;
+	esac
+
+done

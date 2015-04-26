@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+package My::UniquePique;
+use v5.010;
+
+use List::MoreUtils qw(uniq);
+use Data::Dumper qw(Dumper);
+
+#Storing
+my @uniqa;
+my @uniqb;
+my @uniqc;
+my @uniqd;
+
+sub unique {
+	#Pass Arguments
+	my @uniqa =  @_;
+	#Limit Checks
+	my $LIMIT = $#uniqa;
+
+	#Execute Check
+	for ($i=0; $i < $LIMIT; $i++ )
+	{
+		$arry[$i] = $uniqa[$i];	
+	}
+	
+	my @library = uniq @arry;
+	@uniqc = @library;
+	if ( $_verbosity > 0 ){ 
+		say Dumper \@library;
+	}
+}
+
+foreach $rechts (0..10){
+	print $uniqc[$rechts] , "\n";
+	}
+
+return 0;
+
+
+
+#@a = ( "dev", "www", "mail", "www" );
+

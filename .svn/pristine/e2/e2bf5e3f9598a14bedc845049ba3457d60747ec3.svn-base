@@ -1,0 +1,172 @@
+#!/usr/bin/perl
+use v5.010;
+
+use List::MoreUtils qw(uniq);
+use Data::Dumper qw(Dumper);
+
+
+print $ARGV[0];
+
+
+#Initialize - Variables
+my $true=1;
+my $filename="output.list";
+my $tld_list="internet_tld_list.list";
+my $permit=0700;
+my @file;
+my @dnsList;
+#Comparing
+my @a;
+my @b;
+my $c;
+
+
+sub unique {
+	#Pass Arguments
+	my @b =  @_;
+	#Limit Checks
+	my $LIMIT = $#b;
+
+	#Execute Check
+	for ($i=0; $i < $LIMIT; $i++ )
+	{
+		$arry[$i] = $b[$i];	
+	}
+	
+	my @library = uniq @arry;
+	@d = @library;
+	say Dumper \@library;
+}
+
+#Check if created
+#if  ( -f $filename  ){chmod $permit, $filename ;}
+	
+ 
+# use perl open function to open the file (or die trying)
+open( $file, '<', $tld_list) or die "Could not read from $filename, program halting.";
+open( $fh ,'>', 'log.txt');
+
+sub logger {
+	open($STDTO, ' >&', STDOUT);
+	# redirect STDOUT to log.txt
+	open (STDOUT, '>>', 'log.txt');
+	}
+
+
+#Loop through the file with a perl while loop, 
+#stopping when you get to the desired record
+$count = 0;
+
+while ( my $rows = <$file> ){
+	chomp $rows;
+	#print "$rows\n";
+	$dnsList[$count] = $rows;
+	#  = $rows =~ /(\.[^.]+)$/;
+	$count++;
+	}
+
+#Full DNS
+my @dns_line;
+
+#Subdomain list
+our @sdList;
+
+#Step thru Subdomain Array
+our $chk = 0;
+
+
+#Counts Uniq Subdomains
+$_count_subd = 0;
+
+
+print "Total Found, [". $#dnsList."]\n";
+sleep 1;
+#Iterate through the list
+for ( $incr = 0; $incr < ($#dnsList + 1 ); $incr++) 
+{  
+	print "+------------------------+\n";
+	@dnsSector = split(/\./, $dnsList[$incr]); 
+	#Increase Array
+	my $add=0;
+	#Iterate through the DNS	
+	for ( $_sector = 0; $_sector < ($#dnsSector + 1 ); $_sector++)
+	{
+		print "[$add]: [". $dnsSector[ $add ]."]\n";
+		$add++;	
+	}		
+	print "DNS has: [", ( $#dnsSector + 1 ) , "] Sector(s).\n";	
+
+	
+	#Show Domain - Before Storing
+	foreach $_sd ($dnsSector[0]){
+		print "Storing, ". $_sd." as Subdomain!\n";
+		#Store for uniqity main
+		$a[$right++] = $_sd;
+	}			
+	
+		
+
+	print "+~~~~~~~~~~~~~~~~~~~~~~~~+\n";
+}
+
+sub verbosity {
+	print "Comparing: [", $#a , "]\n";
+	#Limit
+	$LIMIT = $#a;
+	#Iterater
+	my $i=0;
+	my @varMessage;
+	my @varCount;
+	my @b = @a;
+	my $add_up=0;
+	for ( $i=0; $i < $LIMIT; $i++ ){   
+
+	#Go thru Array
+	$c = $b[$add_up];
+	$add_up++;
+	
+	#Check for frequency
+	my $up=0;	
+		for ( $t=0; $t < $#a; $t++ )  {
+			#Check from main list
+			if ( $c eq $a[$t] ){
+				$up++;
+				$varMessage[$i] = "$c was present, $up times." ; 
+				$varCount[$i] = $up;  
+			}
+		} 
+	}
+}
+
+
+#Call Uniqity function
+unique( @a );
+$_uniqnum = ( $#d + 1 );
+
+
+#for ( $y = 0; $y < $#a; $y++ ){ 
+#	print "[", $varCount[$y] , "]\n";
+#	print "$varMessage[$y]\n";
+#	}
+
+
+
+
+
+#Counts Subdomain Array
+print $total . "\n" ;
+
+
+
+
+#Close file handler	
+close($file);
+close($STDTO);
+close($STDOUT);
+close($fh);
+1;
+
+
+
+#@a = ( "dev", "www", "mail", "www" );
+

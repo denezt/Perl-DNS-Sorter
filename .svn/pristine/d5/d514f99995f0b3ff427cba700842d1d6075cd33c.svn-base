@@ -1,0 +1,53 @@
+##############################################
+Date: 		April 6th 
+Created By: 	Richard L. Jackson Jr.
+##############################################
+
+1) This application is licensed under 
+the GNU usage policy.
+
+2) The developer is not liable for any
+damages which may occur from the 
+improper usage of the application.
+
+3) System Environment Linux Ubuntu.
+
+4) Tools Used:
+	a. NANO, PICO, Gedit and 
+	Sublime (Registered).
+	b. Perl Interpreter perl 5, version 18, 
+	built for x86_64-linux-gnu-thread-multi
+
+##############################################
+
+Quick Start Guide:
+
+>>>	Prerequisites
+    	* Perl v5.010 or higher.
+	* Linux, Windows, or MAC OS.
+	* DNS LIST
+	* Perl Modules 
+
+Instructions:
+
+	1. Run the 'dns_ 		
+
+
+
+
+
+
+
+
+
+
+=============================================
+SYSTEM BUILD INFO:
+=============================================
+Linux denezt-Satellite-L655 3.13.0-48-generic 
+#80-Ubuntu SMP Thu Mar 12 11:16:15 
+UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+=============================================
+
+GNU General Public License.
+dns_list_sorter.pl

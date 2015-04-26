@@ -1,0 +1,15 @@
+#!/bin/bash
+
+filename="internet_tld_list.list"
+outputfile="outputfile"
+
+_list=($( cat $filename | sort ) )
+#Clear output
+> $outputfile
+
+for incr in {0..49}
+do
+	printf "%s" ${_list[$incr]} | cut -d" " -f1 | tee -a $outputfile
+	this=$(echo ${_list[$incr]} | cut -d" " -f1)
+	#printf "%s" $this
+done

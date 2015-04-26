@@ -1,0 +1,38 @@
+
+
+Perl Developer Case Study for the Endurance International Group
+Endurance International Group
+An
+ich
+
+1. Create a file of 50 lines with random domain names of varying top-level-domain name (TLDs)
+
+2. With each line containing a domain name of varying TLDs (com net org net cc biz co.uk): Example, unsorted lines: 
+        google.com 
+        yahoo.com 
+        something.net 
+        pbs.org 
+        enduranceinternational.com 
+        google.co.uk
+        www.pbs.org
+        store.pbs.org
+
+3. Write a small perl program to load the file into memory and sort the 50 lines of domains
+
+4. First sort the ending (TLDs) in alphabetical order. Then sort the full domain name in alphabetical order.  The subdomain should be considered last when sorting, so list would appear as follows: 
+
+        Example, sort lines:
+        nicoleg.cc
+        google.co.uk
+        enduranceinternational.com 
+        google.com 
+        yahoo.com 
+        something.net 
+        pbs.org
+        store.pbs.org
+        www.pbs.org
+
+Please submit 3 files back that include the following: 
+    1. The input list of domains
+    2. The output list of sorted domains
+    3. The script (or scripts) written in order to accomplish the task.

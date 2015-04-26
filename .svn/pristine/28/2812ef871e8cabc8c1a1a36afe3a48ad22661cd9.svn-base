@@ -1,0 +1,47 @@
+#!/usr/bin/env perl
+
+print 1;
+print qx(ps $$);
+
+#$a = "nobody.com";
+#$b = 'b';
+
+#if ("$a $b" =~ /^(\w+)(\w+) \2(\w+)$/){
+#	print "$2 overlaps in $1-$2-$3\n";
+#}
+
+$incr = 32;
+my @g;
+foreach $_ (0..126) {
+	@g[$incr] .= chr $incr;
+	$incr++;
+	}
+
+for ( $i=32; $i < $incr - 32; $i++ ){ 
+	print "[$i]", @g[$i], "\n";
+	}
+
+foreach $_ (74, 117, 115, 116 ) {
+
+	$a .= chr $_;
+
+	print $a, "\n";
+	}
+
+
+
+#$_ .= 'qwertyui' and tr/eiqrtuwy/nr oteah/ foreach ($b);
+$_ .= 'qwertyui' and tr/eiqrtuwy/nr oteah/ foreach ($b);{ 
+	print $b, "\n" ; 
+	};
+
+foreach $_ ($c) {
+	$_ .= $^X;
+	/(p.{2}1)/;
+	$_ = $1;
+	}
+
+$b =~ /(..)$/;
+
+print "$a$b $c hack$1.";
+

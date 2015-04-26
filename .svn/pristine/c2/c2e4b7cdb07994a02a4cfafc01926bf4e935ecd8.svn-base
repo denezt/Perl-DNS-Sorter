@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+use v5.8;
+use feature qw(say);
+
+#use File::Basename;
+
+
+$true=1;
+$filename="output.list";
+$tld_list="internet_tld_list.list";
+
+$permit=0700;
+
+#Check if created
+#if  ( -f $filename  ){chmod $permit, $filename ;}
+	
+ 
+# use perl open function to open the file (or die trying)
+open( $file, '<', $tld_list) or die "Could not read from $filename, program halting.";
+open($fh ,'>', 'log.txt');
+
+sub logger {
+	open($STDTO, ' >&', STDOUT);
+	# redirect STDOUT to log.txt
+	open (STDOUT, '>>', 'log.txt');
+	}
+
+
+# loop through the file with a perl while loop, stopping when you get to the desired record
+$count = 0;
+
+while ( my $rows = <$file> )
+{
+	chomp $rows;
+	#print "$rows\n";
+	$dns_list[$count] = $rows;
+	#  = $rows =~ /(\.[^.]+)$/;
+	$count++;
+}
+$n = 1;
+$add=0;
+#my @rdot; #Remove dot
+
+for ( $incr = 0; $incr < ($#dns_list + 1 ); $incr++){ 
+
+	for ($this = $dns_list[$add]){
+		#s/[.]/:/g;
+		#print $this =~ /(\.[^.]+)*$/;
+		my $url = $this;
+		#if($url =~ /([^\/]*\.)*([^\/]+\.[^\/])+$/g) {
+		if($url =~ /([^:]*:\/\/)?([^\/]*\.)*([^\/\.]+\.[^\/]+)$/g){
+			print  "Full Address: ", $_, "\n";
+			print  "Subdomain: ", $1, "\n";
+			$rdot=`printf $3 | sed s'/[.]//'g` ;				#Referencing
+			print "Final: ", $rdot, "\n";
+			}	
+	}
+	$add++;
+	#print $incr , "\n";
+	}
+
+
+
+#Close file handler	
+close($file);
+close($STDTO);
+close($STDOUT);
+close($fh);
+1;

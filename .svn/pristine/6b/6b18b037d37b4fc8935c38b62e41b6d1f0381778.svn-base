@@ -1,0 +1,95 @@
+#!/usr/bin/perl
+use v5.8;
+use feature qw(say);
+
+
+$true=1;
+$filename="output.list";
+$tld_list="internet_tld_list.list";
+
+$permit=0700;
+
+#Check if created
+#if  ( -f $filename  ){chmod $permit, $filename ;}
+	
+ 
+# use perl open function to open the file (or die trying)
+open( $file, '<', $tld_list) or die "Could not read from $filename, program halting.";
+open($fh ,'>', 'log.txt');
+
+sub logger {
+	open($STDTO, ' >&', STDOUT);
+	# redirect STDOUT to log.txt
+	open (STDOUT, '>>', 'log.txt');
+	}
+
+
+# loop through the file with a perl while loop, stopping when you get to the desired record
+$count = 0;
+
+while ( my $rows = <$file> )
+{
+	chomp $rows;
+	#print "$rows\n";
+	$dns_list[$count] = $rows;
+	#  = $rows =~ /(\.[^.]+)$/;
+	$count++;
+}
+$n = 1;
+$add=0;
+#my @rdot; #Remove dot
+
+for ( $incr = 0; $incr < ($#dns_list + 1 ); $incr++){ 
+
+	for ($this = $dns_list[$add]){
+		#s/[.]/:/g;
+		#print $this =~ /(\.[^.]+)*$/;
+		my $url = $this;
+		#if($url =~ /([^\/]*\.)*([^\/]+\.[^\/])+$/g) {
+		if($url =~ /([^:]*:\/\/)?([^\/]*\.)*([^\/\.]+\.[^\/]+)$/g){
+			
+			print  "~~~~~~~~~~~~~~[$add]~~~~~~~~~~~~\n";
+			print  "Full Address:\t\t", $url, "\n";
+			#Extract Subdomain - PASS!
+			($oput_1) = ($url =~ /\A(.*\.)?([^\.][^\.])*([^a-z])/);
+			$url_len = length($url); 
+			
+			if ( $url_len > 6 ){ 		
+				$url_len = $url_len -  2;
+				if ( $url_len > 6 ){
+				print "URL Length: [", $url_len - 5, "]\n";
+				}
+			}
+			#Extract Domain 
+			#($oput_2) = ($url =~ /\A(.*\.)?([.]*(.*?)[.]*)/ );
+			($oput_2) = ($url =~ /\A(.*\.[^a-z])/ );
+			#Extract Top Level Domain - PASS!
+			$oput_3 = \/([^\.]+)$/g;  		
+				
+			#$oput_1 =  \$url;  		
+			#$oput_2 = \/([^\.]+)$/g;  		
+			#$oput_3 = \/([^\.]+)$/g;  		
+	
+			print  "Subdomain:\t\t", $oput_1,  "\n";
+			print  "Domain:\t\t", $oput_2, "\n";
+			print  "Top Level Domain:\t", $$oput_3, "\n";
+			print  "===========================\n";
+			
+			#Store full DNS
+			$rdot=\$url;
+			print "Store:\t\t", $$rdot, "\n";
+			print  "===========================\n";
+			}
+	}
+	$add++;
+	#print $incr , "\n";
+	}
+
+
+
+#Close file handler	
+close($file);
+close($STDTO);
+close($STDOUT);
+close($fh);
+1;

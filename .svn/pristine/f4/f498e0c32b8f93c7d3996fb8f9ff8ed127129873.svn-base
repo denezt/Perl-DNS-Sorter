@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+use 5.010;
+
+use List::MoreUtils qw(uniq);
+use Data::Dumper qw(Dumper);
+
+#@a = ( "dev", "www", "mail", "www" );
+
+@a = $ARGV[0];
+sub unique {
+	@b =  @a;
+	$LIMIT = $#b;
+
+	for ($i=0; $i < $LIMIT; $i++ )
+	{
+		$arry[$i] = $b[$i];	
+	}
+
+	my @library = uniq @arry;
+	say Dumper \@library;
+}
+
+
+unique @a;

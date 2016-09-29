@@ -66,11 +66,14 @@ Flushing File:
 
 
 
-
-CONTACT INFO:
-> EMAIL: denezt@yahoo.com
-> PH: 832.670.9769
-
+<table border='2'>
+<tr>
+	<th colspan=2>CONTACT INFO:</th>
+</tr>
+<tr>
+	<td>EMAIL:</td><td> denezt@yahoo.com</td>
+</tr>
+</table>
 
 
 

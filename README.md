@@ -1,52 +1,47 @@
-# DNS Sorter
-============================
-
+# Perl DNS Sorter
 
 ```
 1. This system will separate DNSes by Subdomain, Domain, Top level Domain.
 ```
 
-
-
-
 **License**
 ```
 GNU GPL v2.0, see LICENSE.
 ```
-##############################################
+<div>
 Date: 		04/04/15 
 Created By: 	Richard L. Jackson Jr.
-##############################################
-
-1) This application is licensed under 
+</div>
+---
+1. This application is licensed under 
 the GNU usage policy.
 
-2) The developer is not liable for any
+2. The developer is not liable for any
 damages which may occur from the 
 improper usage of the application.
 
-3) System Environment Linux Ubuntu.
+3. System Environment Linux Ubuntu.
 
-4) Tools Used:
+4. Tools Used:
 	a. NANO, PICO, Gedit and 
 	Sublime (Registered).
 	b. Perl Interpreter perl 5, version 18, 
 	built for x86_64-linux-gnu-thread-multi
 
-##############################################
+----
 
-Quick Start Guide:
+## Quick Start Guide:
 
->>>	Prerequisites
+### Prerequisites
     	* Perl v5.010 or higher.
 	* Linux, Windows, or MAC OS.
 	* DNS LIST
 	* Perl Modules 
 	* tar or 7z - File Decompression tools 
 
-Instructions:
+### Instructions:
 
-Sorting DNS:	
+** Sorting DNS:	**
 	1. Decompress the endurance.tar archive. (tar -xvf endurance.tar)
 	2. Run the 'dns_list_sorter.pl' script with the '-h' parameter.
 		EXAMPLE: ./dns_list_sorter.pl -h
@@ -56,7 +51,7 @@ Sorting DNS:
 	4. After the script is finish the "outputfile.txt" we 
 	have the TLD's, For the Subdomains sorted.
 
-Flushing File:	
+** Flushing File: **
 
 	1. In order to flush the currently saved file simply run
 	the 'dns_list_sorter.pl' using the '-f' parameter.
@@ -75,15 +70,4 @@ Flushing File:
 </tr>
 </table>
 
-
-
-
-=============================================
-SYSTEM BUILD INFO:
-=============================================
-Linux 3.13.0-48-generic 
-#80-Ubuntu SMP Thu Mar 12 11:16:15 
-UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
-=============================================
-
-GNU General Public License.
+<h5> GNU General Public License.</h5>

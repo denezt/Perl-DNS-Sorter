@@ -27,6 +27,7 @@ Created By: 	Richard L. Jackson Jr.
 ## Quick Start Guide:
 
 ### Prerequisites
+
 * Perl v5.010 or higher.
 * Linux, Windows, or MAC OS.
 * DNS LIST
@@ -35,7 +36,8 @@ Created By: 	Richard L. Jackson Jr.
 
 ### Instructions:
 
-** Sorting DNS:	**
+**Sorting DNS:**
+
 	1. Decompress the endurance.tar archive. (tar -xvf endurance.tar)
 	2. Run the 'dns_list_sorter.pl' script with the '-h' parameter.
 		EXAMPLE: ./dns_list_sorter.pl -h
@@ -45,7 +47,7 @@ Created By: 	Richard L. Jackson Jr.
 	4. After the script is finish the "outputfile.txt" we 
 	have the TLD's, For the Subdomains sorted.
 
-** Flushing File: **
+**Flushing File:**
 
 	1. In order to flush the currently saved file simply run
 	the 'dns_list_sorter.pl' using the '-f' parameter.

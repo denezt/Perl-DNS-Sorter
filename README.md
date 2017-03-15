@@ -12,32 +12,26 @@ GNU GPL v2.0, see LICENSE.
 Date: 		04/04/15 
 Created By: 	Richard L. Jackson Jr.
 </div>
----
-1. This application is licensed under 
-the GNU usage policy.
 
-2. The developer is not liable for any
-damages which may occur from the 
-improper usage of the application.
+	1. This application is licensed under the GNU usage policy.
 
-3. System Environment Linux Ubuntu.
+	2. The developer is not liable for any damages which may occur from the improper usage of the application.
 
-4. Tools Used:
-	a. NANO, PICO, Gedit and 
-	Sublime (Registered).
-	b. Perl Interpreter perl 5, version 18, 
-	built for x86_64-linux-gnu-thread-multi
+	3. System Environment Linux Ubuntu.
 
+	4. Tools Used:
+		a. NANO, PICO, Gedit and Sublime (Registered).
+		b. Perl Interpreter perl 5, version 18, built for x86_64-linux-gnu-thread-multi
 ----
 
 ## Quick Start Guide:
 
 ### Prerequisites
-    	* Perl v5.010 or higher.
-	* Linux, Windows, or MAC OS.
-	* DNS LIST
-	* Perl Modules 
-	* tar or 7z - File Decompression tools 
+* Perl v5.010 or higher.
+* Linux, Windows, or MAC OS.
+* DNS LIST
+* Perl Modules 
+* tar or 7z - File Decompression tools 
 
 ### Instructions:
 

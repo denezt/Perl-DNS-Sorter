@@ -56,14 +56,4 @@ Created By: 	Richard L. Jackson Jr.
 	3. Lastly, the script will state that it is complete.
 
 
-
-<table border='2'>
-<tr>
-	<th colspan=2>CONTACT INFO:</th>
-</tr>
-<tr>
-	<td>EMAIL:</td><td> denezt@yahoo.com</td>
-</tr>
-</table>
-
 <h5> GNU General Public License.</h5>

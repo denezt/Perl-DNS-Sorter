@@ -94,7 +94,8 @@ our @sdList;
 #Step thru Subdomain Array
 our $chk = 0;
 
-print "Total Found, [". $#dnsList."]\n";
+$found = $#dnsList + 1; 
+print "Total Found, [". $found."]\n";
 print "Executing, Actions...\n";
 #Iterate through the list
 for ( $incr = 0; $incr < ($#dnsList + 1 ); $incr++) 
@@ -156,7 +157,7 @@ for ( $_sublist=0; $_sublist < $#all; $_sublist++ ){
 			if ( $verbosity > 0 ){
 				print "[ $f ]", $all[$_sublist] , "\n";
 			}
-			$finalizer[$final] = join(".", $dnsSector[0], $dnsSector[1],$dnsSector[2],$dnsSector[3]);  
+			$finalizer[$final] = join(".", $dnsSector[0],$dnsSector[1],$dnsSector[2],$dnsSector[3]);  
 		}	
 	}
 	$f++;
@@ -180,6 +181,7 @@ if ( $verbosity > 1 ){
 	}
 
 #Counts Subdomain Array
+
 print $total . "\n" ;
 #Arguments Entered
 #print "Arguments: ", $options[0] , "\n";

@@ -3,6 +3,7 @@
 
 DEP='liblist-moreutils-perl'
 APT=apt-get
+APT_FLG='install'
 OUTPUT="outputfile.txt"
 
 all: build_all install test clean
@@ -11,7 +12,7 @@ build_all:
 	@printf "\033[33mStarting, build process...\033[0m\n"
 
 install:
-	@#$(APT) $(DEP) && printf "\033[32mInstalled, required packages for\033[0m \033[34mList\033[0m\033[31m::\033[0m\033[34mUtil\033[0m\n"
+	@$(APT) -y $(APT_FLG) $(DEP) && printf "\033[32mInstalled, required packages for\033[0m \033[34mList\033[0m\033[31m::\033[0m\033[34mUtil\033[0m\n"
 
 test:
 	@printf "\033[32mRunning,\033[0m \033[34mDNS List Sorter\033[0m...\n"
